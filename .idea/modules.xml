@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BCTrees.iml" filepath="$PROJECT_DIR$/BCTrees.iml" />
+      <module fileurl="file://C:\Android-Project\BCTrees_finalexam\BCTrees.iml" filepath="C:\Android-Project\BCTrees_finalexam\BCTrees.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BCTrees_finalexam.iml" filepath="$PROJECT_DIR$/BCTrees_finalexam.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
