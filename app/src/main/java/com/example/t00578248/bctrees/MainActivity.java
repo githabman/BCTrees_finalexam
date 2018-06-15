@@ -1,5 +1,6 @@
 package com.example.t00578248.bctrees;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,11 +19,12 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static ArrayList<Tree> treeArrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final ArrayList<Tree> treeArrayList = new ArrayList<Tree>();
+        treeArrayList = new ArrayList<>();
         GridView gridView = findViewById(R.id.treeGrid);
 
 
@@ -59,11 +61,15 @@ public class MainActivity extends AppCompatActivity {
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(),"I am "+ treeArrayList.get(i).scientificName, Toast.LENGTH_LONG).show();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(),"I am "+ treeArrayList.get(position).scientificName, Toast.LENGTH_LONG).show();
+                Intent intent= new Intent(MainActivity.this, DescriptionActivity.class);
+                intent.putExtra("position", position);
+                startActivity(intent);
             }
         });
     }
+
 
     public String loadJSONFromAsset(String filename){
         String json ="";
